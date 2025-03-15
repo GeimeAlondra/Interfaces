@@ -10,6 +10,9 @@ import Implementacion.Perro;
 import Interfaz.IInterfazVehiculo;
 import Implementacion.Coche;
 import Implementacion.Bicicleta;
+import Interfaz.IInterfazPago;
+import Implementacion.PagoConEfectivo;
+import Implementacion.PagoConTarjeta;
 
 /**
  *
@@ -44,5 +47,16 @@ public class Interfaces {
         System.out.println("\nMovimiento de la bicicleta:");
         System.out.println(bicicleta.arrancar());
         System.out.println(bicicleta.detener()); 
+        
+        // Pago
+        IInterfazPago<String> pagoTarjeta = new PagoConTarjeta();
+        IInterfazPago<String> pagoEfectivo = new PagoConEfectivo();
+        // Pago con tarjeta
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Pago con tarjeta:");
+        System.out.println(pagoTarjeta.procesarPago(150.75));
+        // Pago con efectivo
+        System.out.println("\nPago con efectivo:");
+        System.out.println(pagoEfectivo.procesarPago(80.00));
     }
 }
