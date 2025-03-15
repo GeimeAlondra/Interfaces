@@ -19,6 +19,8 @@ import Implementacion.Circulo;
 import Interfaz.IInterfazTrabajador;
 import Implementacion.Desarrollador;
 import Implementacion.Diseñador;
+import Interfaz.IInterfazOrdenable;
+import Implementacion.ListaNumeros;
 
 import java.util.Scanner;
 
@@ -29,6 +31,8 @@ import java.util.Scanner;
 public class Interfaces {
 
     public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
         
         //Animal
         IInterfazAnimal<String> perro = new Perro();
@@ -68,7 +72,6 @@ public class Interfaces {
         System.out.println(pagoEfectivo.procesarPago(80.00));
         
         // Figura geometrica
-        Scanner scanner = new Scanner(System.in);
         // Circulo
         System.out.println("------------------------------------------------------------------------");
         System.out.print("Ingrese el radio del círculo: ");
@@ -97,5 +100,11 @@ public class Interfaces {
         System.out.println("\nTarea del diseñador:");
         System.out.println(diseñador.trabajar());
         
+        // Ordenable
+        IInterfazOrdenable<String> listaNumeros = new ListaNumeros();
+        // Lista de números
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println(listaNumeros.mostrarLista());
+        System.out.println("\n" + listaNumeros.ordenar());
     }
 }
