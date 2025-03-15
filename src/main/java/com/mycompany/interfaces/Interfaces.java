@@ -7,27 +7,36 @@ package com.mycompany.interfaces;
 import Interfaz.IInterfazAnimal;
 import Implementacion.Gato;
 import Implementacion.Perro;
+
 import Interfaz.IInterfazVehiculo;
 import Implementacion.Coche;
 import Implementacion.Bicicleta;
+
 import Interfaz.IInterfazPago;
 import Implementacion.PagoConEfectivo;
 import Implementacion.PagoConTarjeta;
+
 import Interfaz.IInterfazFiguraGeometrica;
 import Implementacion.Rectangulo;
 import Implementacion.Circulo;
+
 import Interfaz.IInterfazTrabajador;
 import Implementacion.Desarrollador;
 import Implementacion.Diseñador;
+
 import Interfaz.IInterfazOrdenable;
 import Implementacion.ListaNumeros;
+
 import Interfaz.IInterfazAlimentacion;
 import Implementacion.Animal;
 import Implementacion.Persona;
+
 import Interfaz.IInterfazNotificable;
 import Implementacion.CorreoElectronico;
 import Implementacion.SMS;
 
+import Interfaz.IInterfazComparableObjeto;
+import Implementacion.Producto;
 
 import java.util.Scanner;
 
@@ -136,6 +145,14 @@ public class Interfaces {
         System.out.println("\nNotificación de SMS:");
         System.out.println(sms.enviarNotificacion());  
         
-        
+        // ComparableObjeto
+        Producto producto1 = new Producto(150.0, "Laptop ASUS");
+        Producto producto2 = new Producto(200.0, "Impresora HP");
+        // Producto
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println(producto1);
+        System.out.println(producto2); 
+        System.out.println("\n" + producto1.comparar(producto2));
     }
+    
 }
