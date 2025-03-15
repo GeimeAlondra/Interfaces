@@ -16,6 +16,10 @@ import Implementacion.PagoConTarjeta;
 import Interfaz.IInterfazFiguraGeometrica;
 import Implementacion.Rectangulo;
 import Implementacion.Circulo;
+import Interfaz.IInterfazTrabajador;
+import Implementacion.Desarrollador;
+import Implementacion.Diseñador;
+
 import java.util.Scanner;
 
 /**
@@ -81,5 +85,17 @@ public class Interfaces {
         System.out.println("\nÁrea: " + rectangulo.area());
         System.out.println("Perímetro: " + rectangulo.perimetro());
         scanner.close();
+        
+        // Trabajador
+        IInterfazTrabajador<String> desarrollador = new Desarrollador();
+        IInterfazTrabajador<String> diseñador = new Diseñador();
+        // Desarrollador
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Tarea del desarrollador:");
+        System.out.println(desarrollador.trabajar());
+        // Diseñador
+        System.out.println("\nTarea del diseñador:");
+        System.out.println(diseñador.trabajar());
+        
     }
 }
