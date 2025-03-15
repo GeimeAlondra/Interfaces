@@ -21,6 +21,9 @@ import Implementacion.Desarrollador;
 import Implementacion.Diseñador;
 import Interfaz.IInterfazOrdenable;
 import Implementacion.ListaNumeros;
+import Interfaz.IInterfazAlimentacion;
+import Implementacion.Animal;
+import Implementacion.Persona;
 
 import java.util.Scanner;
 
@@ -34,15 +37,15 @@ public class Interfaces {
         
         Scanner scanner = new Scanner(System.in);
         
-        //Animal
+        // Animal
         IInterfazAnimal<String> perro = new Perro();
         IInterfazAnimal<String> gato = new Gato();
-        //Perro
+        // Perro
         System.out.println("------------------------------------------------------------------------");
         System.out.println("Comportamiento del perro:");
         System.out.println(perro.hacerSonido());
         System.out.println(perro.mover());       
-        //Gato
+        // Gato
         System.out.println("\nComportamiento del gato:");
         System.out.println(gato.hacerSonido());
         System.out.println(gato.mover());
@@ -106,5 +109,16 @@ public class Interfaces {
         System.out.println("------------------------------------------------------------------------");
         System.out.println(listaNumeros.mostrarLista());
         System.out.println("\n" + listaNumeros.ordenar());
+        
+        // Alimentación
+        IInterfazAlimentacion<String> persona = new Persona();
+        IInterfazAlimentacion<String> animal = new Animal();
+        //Persona
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Comportamiento de la persona:");
+        System.out.println(persona.comer());   
+        // Animal
+        System.out.println("\nComportamiento del animal:");
+        System.out.println(animal.comer());
     }
 }
