@@ -13,6 +13,10 @@ import Implementacion.Bicicleta;
 import Interfaz.IInterfazPago;
 import Implementacion.PagoConEfectivo;
 import Implementacion.PagoConTarjeta;
+import Interfaz.IInterfazFiguraGeometrica;
+import Implementacion.Rectangulo;
+import Implementacion.Circulo;
+import java.util.Scanner;
 
 /**
  *
@@ -58,5 +62,24 @@ public class Interfaces {
         // Pago con efectivo
         System.out.println("\nPago con efectivo:");
         System.out.println(pagoEfectivo.procesarPago(80.00));
+        
+        // Figura geometrica
+        Scanner scanner = new Scanner(System.in);
+        // Circulo
+        System.out.println("------------------------------------------------------------------------");
+        System.out.print("Ingrese el radio del círculo: ");
+        double radio = scanner.nextDouble();
+        IInterfazFiguraGeometrica<Double> circulo = new Circulo(radio);
+        System.out.println("\nÁrea: " + circulo.area());
+        System.out.println("Perímetro: " + circulo.perimetro());
+        // Rectangulo
+        System.out.print("\nIngrese la base del rectángulo: ");
+        double base = scanner.nextDouble();
+        System.out.print("Ingrese la altura del rectángulo: ");
+        double altura = scanner.nextDouble();
+        IInterfazFiguraGeometrica<Double> rectangulo = new Rectangulo(base, altura);
+        System.out.println("\nÁrea: " + rectangulo.area());
+        System.out.println("Perímetro: " + rectangulo.perimetro());
+        scanner.close();
     }
 }
