@@ -24,6 +24,10 @@ import Implementacion.ListaNumeros;
 import Interfaz.IInterfazAlimentacion;
 import Implementacion.Animal;
 import Implementacion.Persona;
+import Interfaz.IInterfazNotificable;
+import Implementacion.CorreoElectronico;
+import Implementacion.SMS;
+
 
 import java.util.Scanner;
 
@@ -120,5 +124,18 @@ public class Interfaces {
         // Animal
         System.out.println("\nComportamiento del animal:");
         System.out.println(animal.comer());
+        
+        // Notificable
+        IInterfazNotificable<String> correoElectronico = new CorreoElectronico();
+        IInterfazNotificable<String> sms = new SMS();
+        // Correo electrónico
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Notificación de correo:");
+        System.out.println(correoElectronico.enviarNotificacion());  
+        // SMS
+        System.out.println("\nNotificación de SMS:");
+        System.out.println(sms.enviarNotificacion());  
+        
+        
     }
 }
