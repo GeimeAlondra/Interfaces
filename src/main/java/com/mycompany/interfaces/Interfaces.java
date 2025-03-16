@@ -38,6 +38,10 @@ import Implementacion.SMS;
 import Interfaz.IInterfazComparableObjeto;
 import Implementacion.Producto;
 
+import Interfaz.IInterfazDescontable;
+import Implementacion.DescuentoFijo;
+import Implementacion.DescuentoPorcentaje;
+
 import java.util.Scanner;
 
 /**
@@ -153,6 +157,15 @@ public class Interfaces {
         System.out.println(producto1);
         System.out.println(producto2); 
         System.out.println("\n" + producto1.comparar(producto2));
-    }
-    
+        
+        // Descontable
+        IInterfazDescontable<Double> descuentoPorcentaje = new DescuentoPorcentaje(20);  // Descuento del 20%
+        IInterfazDescontable<Double> descuentoFijo = new DescuentoFijo(10);  // Descuento fijo de 10 dolares
+        // Descuento
+        System.out.println("------------------------------------------------------------------------");
+        double precio = 50.0;  // Precio original
+        System.out.println("Precio original: $" + precio);
+        System.out.println("\nDescuento por porcentaje (20%) en el precio de $" + precio + ": $" + descuentoPorcentaje.calcularDescuento(precio));
+        System.out.println("Descuento fijo de 10 dolares en el precio de $" + precio + ": $" + descuentoFijo.calcularDescuento(precio));
+    } 
 }
